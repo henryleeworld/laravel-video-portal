@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomePageController@index');
-Route::get('channels/{channel}', 'HomePageController@channel')->name('channel');
-Route::get('videos/{video}', 'HomePageController@video')->name('video');
+Route::get('/', [HomePageController::class, 'index']);
+Route::get('channels/{channel}', [HomePageController::class, 'channel'])->name('channel');
+Route::get('videos/{video}', [HomePageController::class, 'video'])->name('video');
 
 Route::get('/home', function () {
     if (session('status')) {
@@ -28,7 +29,7 @@ Route::get('/home', function () {
 Auth::routes(['register' => false]);
 // Admin
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Video;
+use App\Models\Video;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;

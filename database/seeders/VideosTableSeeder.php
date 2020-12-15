@@ -1,6 +1,8 @@
 <?php
 
-use App\Channel;
+namespace Database\Seeders;
+
+use App\Models\Channel;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 

@@ -1,6 +1,6 @@
-# Laravel 7 影片入口網站
+# Laravel 8 影片入口網站
 
-這是一個影片入口網站，提供使用者上傳、搜尋或發現影片，可串流大量的影片內容，它支援行動裝置的存取，並強調安全及簡單易用。Laravel 7 影片入口網站主要是用的 [QuickAdminPanel](https://quickadminpanel.com) 生成的，除了一些定制代碼，可依需求彈性改造的工具。
+這是一個影片入口網站，提供使用者上傳、搜尋或發現影片，可串流大量的影片內容，它支援行動裝置的存取，並強調安全及簡單易用。Laravel 8 影片入口網站主要是用的 [QuickAdminPanel](https://quickadminpanel.com) 生成的，除了一些定制代碼，可依需求彈性改造的工具。
 
 ## 使用方式
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
@@ -26,10 +26,10 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/tQAsSBz.png)
+![](https://i.imgur.com/Fu0usC0.png)
 > 進行所有頻道的管理
 
-![](https://i.imgur.com/kBjxE45.png)
+![](https://i.imgur.com/9MEMjXc.png)
 > 建立好頻道之後就可以上傳和管理影片
 
 ![](https://i.imgur.com/o3tDmxP.png)
