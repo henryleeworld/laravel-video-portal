@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.comments.update", [$comment->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="video_id">{{ trans('cruds.comment.fields.video') }}</label>
                 <select class="form-control select2 {{ $errors->has('video') ? 'is-invalid' : '' }}" name="video_id" id="video_id" required>
                     @foreach($videos as $id => $video)
@@ -24,7 +24,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.comment.fields.video_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="name">{{ trans('cruds.comment.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $comment->name) }}" required>
                 @if($errors->has('name'))
@@ -34,7 +34,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.comment.fields.name_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="comment_text">{{ trans('cruds.comment.fields.comment_text') }}</label>
                 <textarea class="form-control {{ $errors->has('comment_text') ? 'is-invalid' : '' }}" name="comment_text" id="comment_text" required>{{ old('comment_text', $comment->comment_text) }}</textarea>
                 @if($errors->has('comment_text'))
@@ -44,7 +44,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.comment.fields.comment_text_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

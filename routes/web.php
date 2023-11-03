@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [HomePageController::class, 'index']);
 Route::get('channels/{channel}', [HomePageController::class, 'channel'])->name('channel');
 Route::get('videos/{video}', [HomePageController::class, 'video'])->name('video');
@@ -27,8 +26,8 @@ Route::get('/home', function () {
 });
 
 Auth::routes(['register' => false]);
-// Admin
 
+// Admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
@@ -54,5 +53,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'App\Http\Co
     // Comments
     Route::delete('comments/destroy', 'CommentsController@massDestroy')->name('comments.massDestroy');
     Route::resource('comments', 'CommentsController');
-
 });

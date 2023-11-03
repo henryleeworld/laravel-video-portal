@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.videos.update", [$video->id]) }}" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="channel_id">{{ trans('cruds.video.fields.channel') }}</label>
                 <select class="form-control select2 {{ $errors->has('channel') ? 'is-invalid' : '' }}" name="channel_id" id="channel_id" required>
                     @foreach($channels as $id => $channel)
@@ -24,7 +24,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.video.fields.channel_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="title">{{ trans('cruds.video.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $video->title) }}" required>
                 @if($errors->has('title'))
@@ -34,7 +34,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.video.fields.title_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label class="required" for="youtube_embed">{{ trans('cruds.video.fields.youtube_embed') }}</label>
                 <textarea class="form-control {{ $errors->has('youtube_embed') ? 'is-invalid' : '' }}" name="youtube_embed" id="youtube_embed" required>{{ old('youtube_embed', $video->youtube_embed) }}</textarea>
                 @if($errors->has('youtube_embed'))
@@ -44,7 +44,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.video.fields.youtube_embed_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="description">{{ trans('cruds.video.fields.description') }}</label>
                 <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{{ old('description', $video->description) }}</textarea>
                 @if($errors->has('description'))
@@ -54,7 +54,7 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.video.fields.description_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div class="mb-0">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>
